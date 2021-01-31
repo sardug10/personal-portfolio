@@ -185,7 +185,7 @@ body {
 .header__links {
   display: inline-block;
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 5%;
   font-size: 2rem;
   -webkit-transform: translate(-50%, -50%);
@@ -250,7 +250,7 @@ body {
 .navigation {
   position: absolute;
   right: 5%;
-  top: 35%;
+  top: 15%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: fixed;
