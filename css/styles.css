@@ -26,6 +26,7 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
+  overflow-x: hidden;
 }
 
 .header {
@@ -36,7 +37,7 @@ body {
 
 .header__title {
   font-size: 2rem;
-  color: #000000;
+  color: #0e0e0e;
   text-transform: uppercase;
   position: absolute;
   top: 5rem;
@@ -71,7 +72,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: 5.5rem;
-  color: #000000;
+  color: #0e0e0e;
   letter-spacing: 2px;
   font-weight: 700;
   z-index: 500;
@@ -204,7 +205,7 @@ body {
 .header__links::before {
   display: block;
   content: "";
-  background-color: #000000;
+  background-color: #0e0e0e;
   height: 18rem;
   width: 1.8px;
   position: absolute;
@@ -231,7 +232,7 @@ body {
 }
 
 .header__icons {
-  color: #000000;
+  color: #0e0e0e;
   font-size: 2.5rem;
 }
 
@@ -288,8 +289,8 @@ body {
   right: 6rem;
   border-radius: 50%;
   z-index: 2000;
-  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1rem 3rem rgba(14, 14, 14, 0.1);
+          box-shadow: 0 1rem 3rem rgba(14, 14, 14, 0.1);
   text-align: center;
   cursor: pointer;
 }
@@ -327,7 +328,7 @@ body {
 
 .navigation__link {
   text-decoration: none;
-  color: #000000;
+  color: #0e0e0e;
 }
 
 .navigation__link:hover {
@@ -374,7 +375,7 @@ body {
 .navigation__icon, .navigation__icon::before, .navigation__icon::after {
   width: 4rem;
   height: 2px;
-  background-color: #000000;
+  background-color: #0e0e0e;
   display: inline-block;
 }
 
@@ -445,7 +446,7 @@ body {
 
 .about__title {
   font-size: 2rem;
-  color: #000000;
+  color: #0e0e0e;
   text-transform: uppercase;
   position: absolute;
   top: 5rem;
@@ -594,7 +595,7 @@ body {
 
 .skills__title {
   font-size: 2rem;
-  color: #000000;
+  color: #0e0e0e;
   text-transform: uppercase;
   position: absolute;
   top: 5rem;
@@ -771,7 +772,7 @@ body {
 
 .projects__title {
   font-size: 2rem;
-  color: #000000;
+  color: #0e0e0e;
   text-transform: uppercase;
   position: absolute;
   top: 5rem;
@@ -915,6 +916,32 @@ body {
   position: relative;
 }
 
+.articles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9ae0ff), to(rgba(0, 7, 213, 0.25)));
+  background: linear-gradient(#9ae0ff, rgba(0, 7, 213, 0.25));
+  -webkit-clip-path: circle(30% at right 70%);
+  clip-path: circle(30% at right 70%);
+}
+
+.articles::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9ae0ff), to(rgba(0, 7, 213, 0.25)));
+  background: linear-gradient(#9ae0ff, rgba(0, 7, 213, 0.25));
+  -webkit-clip-path: circle(20% at 10% 10%);
+  clip-path: circle(20% at 10% 10%);
+}
+
 @media only screen and (max-width: 50em) {
   .articles {
     padding: 8rem;
@@ -929,7 +956,7 @@ body {
 
 .articles__heading {
   font-size: 2rem;
-  color: #000000;
+  color: #0e0e0e;
   text-transform: uppercase;
   position: absolute;
   top: 5rem;
@@ -951,66 +978,123 @@ body {
   }
 }
 
-.articles__div {
-  margin: 3.5rem 30%;
-  width: 40%;
-  padding: 1.2rem 2rem;
-  border-radius: 0.8rem;
-  background-color: rgba(2, 121, 174, 0.25);
-}
-
-@media only screen and (max-width: 68.75em) {
-  .articles__div {
-    margin: 3.5rem 25%;
-    width: 50%;
-  }
+.articles__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 2;
 }
 
 @media only screen and (max-width: 50em) {
-  .articles__div {
-    margin: 3rem 20%;
-    width: 60%;
+  .articles__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 37.5em) {
-  .articles__div {
-    margin: 3rem 10%;
-    width: 80%;
+.articles__div {
+  position: relative;
+  height: 25rem;
+  width: 20rem;
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(2, 121, 174, 0.25);
+  border-radius: 1.5rem;
+  -webkit-box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.5);
+          box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.articles__div:not(:first-child) {
+  margin-left: -4rem;
+}
+
+@media only screen and (max-width: 50em) {
+  .articles__div:not(:first-child) {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+.articles__div:hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+  z-index: 5;
+}
+
+@media only screen and (max-width: 50em) {
+  .articles__div:hover {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.articles__div:hover ~ .articles__div {
+  -webkit-transform: translateX(4rem);
+          transform: translateX(4rem);
+}
+
+@media only screen and (max-width: 50em) {
+  .articles__div:hover ~ .articles__div {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 .articles__date {
-  display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: #0279ae;
   margin: 0.5rem 0;
   font-weight: 700;
+  cursor: default;
 }
 
 .articles__title {
-  font-size: 1.8rem;
-  color: #0279ae;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
+  color: #01232d;
+  font-style: italic;
   margin: 1.2rem 0;
   font-weight: 900;
-}
-
-.articles__description {
-  font-size: 1.7rem;
-  color: #0279ae;
-  word-spacing: 3.5px;
-}
-
-.articles__link {
-  display: inline-block;
-  margin-top: 2rem;
   text-decoration: none;
-  font-size: 1.7rem;
-  font-weight: 700;
+}
+
+.articles__title:hover {
+  color: rgba(1, 35, 45, 0.75);
+}
+
+.articles__publisher {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 2rem;
+  cursor: default;
+}
+
+.articles__publisher--logo {
+  height: 2.2rem;
+  border-radius: 100rem;
+}
+
+.articles__publisher--name {
+  font-size: 1.4rem;
   color: #0279ae;
-  border-bottom: 2px solid #0279ae;
-  padding: 1.5px 0;
+  margin-left: 1rem;
+  font-weight: 700;
 }
 
 .contact {
@@ -1021,7 +1105,7 @@ body {
 
 .contact__title {
   font-size: 2rem;
-  color: #000000;
+  color: #0e0e0e;
   text-transform: uppercase;
   position: absolute;
   top: 5rem;
